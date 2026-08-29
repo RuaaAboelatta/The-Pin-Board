@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+
+}
+.side-bar{
+    width: 27%;
+    height: 100vh;
+    background-color: aquamarine;
+    padding: 30px;
+}
+.side-bar h2{
+    margin-bottom: 50px;
+}
+form{
+    width: 100%;
+}
+input, textarea, select{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+   
+}
+textarea{
+    margin: 10px 0px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 50px;
+}
+select{
+    width: 50%;
+}
+#create-btn{
+    float: right;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+#create-btn:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+
+}
+#task-container{
+    width: 70%;
+    height: 90vh;
+    background-color: rgb(247, 234, 211);
+    background-image: url(../assets/board2.jpg);
+    background-size: cover;
+    column-count: 4;
+    column-gap: 20px;
+    padding: 20px;
+    overflow: auto;
+    scrollbar-width:thin;
+}
+
+.task{
+    background: wheat;
+    border-radius: 5px;
+    padding: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    transition: 0.5s;
+}
+.pin{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 50%;
+}
+.pin::after{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+.pin-high{
+    background-color: rgb(228, 3, 3);
+}
+.pin-high::after{
+    background-color: red;
+}
+.pin-medium{
+    background-color: rgb(243, 243, 13);
+}
+.pin-medium::after{
+    background-color: yellow;
+}
+.pin-low{
+    background-color: rgb(2, 88, 2);
+}
+.pin-low::after{
+    background-color: green;
+}
+.task p{
+    word-wrap: break-word; 
+    margin: 10px 0px;
+}
+.icons{
+    float: right;
+}
+i{
+    cursor: pointer;
+}
+.checked h2, .checked p{
+    text-decoration: line-through;
+    color: gray;
+}
+ul{
+    list-style: none;
+    margin: 20px 0px;
+}

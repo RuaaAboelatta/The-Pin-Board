@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-bar">
+        <h2>Sticky Note</h2>
+        <form>
+          <input type="text" id="task-title" placeholder="Task Title"/>
+          <textarea name="" id="task-description" placeholder="Description" rows="4"></textarea>
+          <select name="" id="task-priority">
+            <option value="high">high</option>
+            <option value="medium">medium</option>
+            <option value="low">low</option>
+          </select>
+          <button id="create-btn">Create</button>
+        </form>
+        
+        <ul>
+          <li>all</li>
+          <li>active</li>
+          <li>finished</li>
+        </ul>
+      </div>
+      <div id="task-container">
+       
+      </div>
+        
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
