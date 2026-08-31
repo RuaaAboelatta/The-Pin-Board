@@ -59,7 +59,7 @@ input, textarea, select{
     border: none;
     width: 100%;  
 }
-input:focus, textarea:focus select:focus{
+input:focus, textarea:focus{
     border: 2px solid var(--light-brown);
     outline: none;
 }
@@ -113,11 +113,11 @@ li:hover{
     color: var(--text-muted);
     border-left: 3px solid var(--light-brown);
 }
-.clear-btn{
+.clear-btn-cont{
     padding-top: 10px;
     border-top: 1px solid var(--light-gray);
 }
-.clear-btn button{
+#clear-btn{
     background-color: transparent;
     padding: 15px 10px;
     border: none;
@@ -127,7 +127,7 @@ li:hover{
     text-align: left;
     transition: 0.5s;
 }
-.clear-btn button:hover{
+#clear-btn:hover{
     background-color: rgba(243, 199, 199, 0.848);
     cursor: pointer;
 }
@@ -152,8 +152,11 @@ li:hover{
     border-radius: 5px;
     box-shadow: 0 4px 20px var(--light-gray);
 }
-.task:hover{
+.task:nth-child(even):hover{
     transform: scale(1.05) rotate(3deg);
+}
+.task:nth-child(odd):hover{
+    transform: scale(1.05) rotate(-3deg);
 }
 .task-high{
     background-color: var(--light-red);

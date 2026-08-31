@@ -2,10 +2,13 @@ var titleInput = document.getElementById('task-title')
 var descriptionInput = document.getElementById('task-description')
 var prioritySelect = document.getElementById('task-priority')
 var taskContainer= document.getElementById('task-container')
+
+//buttons
 var createBtn = document.getElementById('create-btn')
 var allBtn = document.getElementById('all-btn')
 var activeBtn = document.getElementById('active-btn')
 var completedBtn = document.getElementById('completed-btn')
+var clearBtn = document.getElementById('clear-btn')
 
 
 var tasks = []
@@ -70,6 +73,15 @@ function deleteTask(id){
     saveTasks()
     applyFilter(currentFilter)
 }
+
+function clearCompleted(){
+    tasks = tasks.filter(function(task) {
+        return task.completed === false
+    })
+    saveTasks()
+    applyFilter(currentFilter)
+}
+clearBtn.addEventListener('click', clearCompleted)
 
 // Displaying tasks
 function displayTasks(tasks) {
