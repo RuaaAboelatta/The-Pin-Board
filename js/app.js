@@ -76,13 +76,13 @@ function displayTasks(tasks) {
     console.log('All tasks:', tasks)
     taskContainer.innerHTML = tasks.map((task)=>{
         return`
-            <div class="task ${task.completed ? "checked" : ""}">
+            <div class="task task-${task.priority} ${task.completed ? "checked" : ""}">
                 <div class="pin pin-${task.priority}"></div>
                 <h2>${task.title}</h2>
                 <p>${task.description}</p>
                 <div class="icons">
                     <i class="fa-solid ${task.completed ? "fa-x" : "fa-check"} " onclick="toggleTaskComp(${task.id})"></i>
-                    <i class="fa-solid fa-trash"  onclick="deleteTask(${task.id})"></i>
+                    <i class="fa-regular fa-trash-can"  onclick="deleteTask(${task.id})"></i>
                 </div>
             </div>
         `

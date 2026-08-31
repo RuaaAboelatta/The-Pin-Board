@@ -4,34 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand+SC&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
       <div class="side-bar">
-        <h2>Sticky Note</h2>
-        <form>
-          <input type="text" id="task-title" placeholder="Task Title"/>
-          <textarea name="" id="task-description" placeholder="Description" rows="4"></textarea>
-          <select name="" id="task-priority">
-            <option value="high">high</option>
-            <option value="medium">medium</option>
-            <option value="low">low</option>
-          </select>
-          <button id="create-btn">Create</button>
-        </form>
-        
-        <ul>
-          <li id="all-btn">All</li>
-          <li id="active-btn">Active</li>
-          <li id="completed-btn">Completed</li>
-        </ul>
+        <div>
+          <h2>Sticky Note</h2>
+          <form>
+            <input type="text" id="task-title" placeholder="Task Title" />
+            <textarea
+              name=""
+              id="task-description"
+              placeholder="Description"
+              rows="4"
+            ></textarea>
+            <select name="" id="task-priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <button id="create-btn">
+              <i class="fa-solid fa-thumbtack"></i>
+              Create
+            </button>
+          </form>
+
+          <ul>
+            <li id="all-btn">
+              <i class="fa-solid fa-list-ul"></i>
+              All
+            </li>
+            <li id="active-btn">
+              <i class="fa-solid fa-thumbtack"></i>
+
+              Active
+            </li>
+            <li id="completed-btn">
+              <i class="fa-regular fa-circle-check"></i>
+              Completed
+            </li>
+          </ul>
+        </div>
+        <div class="clear-btn">
+          <button>
+            <i class="fa-regular fa-trash-can"></i>
+            Clear Completed
+          </button>
+        </div>
       </div>
-      <div id="task-container">
-       
-      </div>
-        
+      <div id="task-container"></div>
     </div>
     <script src="js/app.js"></script>
   </body>

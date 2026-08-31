@@ -1,33 +1,70 @@
+:root{
+    --light-red: #FDB3AA;
+    --red: #AE1221;
+    --red-highlight: #CA2C3C;
+    --light-yellow: #F7FC91;
+    --yellow: #FDD200;
+    --yellow-highlight: #FFDD2B;
+    --light-green: #AAEAA0;
+    --green: #20B91A;
+    --green-highlight: #42DE3B;
+    --light-brown: #D2B48C;
+    --text-secondary: #5C4033;
+    --text-muted: #8B7355;
+    --dark-bg-secondary: #2C1810;
+    --light-gray: #F0EDE8;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body, button, input, select{
+    color: var(--text-secondary);
+    font-family: "Montserrat", sans-serif;
+}
+h2{
+    font-family: "Patrick Hand SC", cursive;
+}
+i{
+    cursor: pointer;
+}
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 50px;
-
 }
 .side-bar{
-    width: 27%;
+    width: 30%;
     height: 100vh;
-    background-color: aquamarine;
-    padding: 30px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    scrollbar-width: none;
+    border-right: 3px solid var(--light-brown);
 }
 .side-bar h2{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 form{
     width: 100%;
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 5px;
 }
 input, textarea, select{
     padding: 10px;
-    border-radius: 5px;
     border: none;
-    width: 100%;
-   
+    width: 100%;  
+}
+input:focus, textarea:focus select:focus{
+    border: 2px solid var(--light-brown);
+    outline: none;
+}
+ select:focus{
+    outline: none;
 }
 textarea{
     margin: 10px 0px;
@@ -36,82 +73,133 @@ textarea{
     min-height: 50px;
 }
 select{
-    width: 50%;
+    width: 35%;
+    border-radius: 5px;
+    cursor: pointer;
 }
 #create-btn{
     float: right;
-    padding: 10px 15px;
+    padding:  10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: white;
+    color: white;
+    background-color: var(--text-muted);
+    transition: 0.5s;
 }
 #create-btn:hover{
     cursor: pointer;
-    background-color: aliceblue;
-
+    background-color: var(--text-secondary);
+}
+ul{
+    list-style: none;
+    margin: 20px 0px;
+}
+li{
+    margin: 10px 0px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.side-bar i{
+    margin-right: 5px;
+    cursor: pointer;
+}
+li:hover{
+    cursor: pointer;
+    background-color: var(--light-gray);
+}
+.active-btn{
+    background-color: var(--light-gray);
+    color: var(--text-muted);
+    border-left: 3px solid var(--light-brown);
+}
+.clear-btn{
+    padding-top: 10px;
+    border-top: 1px solid var(--light-gray);
+}
+.clear-btn button{
+    background-color: transparent;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    color: var(--red);
+    width: 100%;
+    text-align: left;
+    transition: 0.5s;
+}
+.clear-btn button:hover{
+    background-color: rgba(243, 199, 199, 0.848);
+    cursor: pointer;
 }
 #task-container{
-    width: 70%;
-    height: 90vh;
-    background-color: rgb(247, 234, 211);
-    background-image: url(../assets/board2.jpg);
-    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle, var(--light-gray) 1px, transparent 1px);
+    background-size: 15px 15px;
     column-count: 4;
     column-gap: 20px;
-    padding: 20px;
+    padding: 50px;
     overflow: auto;
     scrollbar-width:thin;
 }
-
 .task{
-    background: wheat;
-    border-radius: 5px;
+    position: relative;
     padding: 20px;
     padding-bottom: 30px;
     margin-bottom: 20px;
     break-inside: avoid;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    position: relative;
     transition: 0.5s;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px var(--light-gray);
+}
+.task:hover{
+    transform: scale(1.05) rotate(3deg);
+}
+.task-high{
+    background-color: var(--light-red);
+}
+.task-medium{
+    background-color: var(--light-yellow);
+}
+.task-low{
+    background-color: var(--light-green);
 }
 .pin{
     position: absolute;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
     top: 0;
     left: 50%;
+    transform: translate(-50%, -50%);
 }
 .pin::after{
-    width: 18px;
-    height: 18px;
+    content: '';
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
     position: absolute;
-    content: '';
     top: 50%;
-    transform: translate(-50%, -50%);
     left: 50%;
+    transform: translate(-50%, -50%);
 }
 .pin-high{
-    background-color: rgb(228, 3, 3);
+    background-color: var(--red);
 }
 .pin-high::after{
-    background-color: red;
+    background-color: var(--red-highlight);
 }
 .pin-medium{
-    background-color: rgb(243, 243, 13);
+    background-color: var(--yellow);
 }
 .pin-medium::after{
-    background-color: yellow;
+    background-color: var(--yellow-highlight);
 }
 .pin-low{
-    background-color: rgb(2, 88, 2);
+    background-color: var(--green);
 }
 .pin-low::after{
-    background-color: green;
+    background-color: var(--green-highlight);
 }
 .task p{
     word-wrap: break-word; 
@@ -120,28 +208,9 @@ select{
 .icons{
     float: right;
 }
-i{
-    cursor: pointer;
-}
 .checked h2, .checked p{
     text-decoration: line-through;
-    color: gray;
 }
-ul{
-    list-style: none;
-    margin: 20px 0px;
-}
-li{
-    background-color: antiquewhite;
-    margin: 10px 0px;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-    transition: 0.5s;
-}
-li:hover{
-    cursor: pointer;
-}
-.active-btn{
-    background-color: red;
+.checked p{
+    color: var(--text-muted);
 }
