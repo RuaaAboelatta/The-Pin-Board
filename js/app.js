@@ -2,6 +2,7 @@ var titleInput = document.getElementById('task-title')
 var descriptionInput = document.getElementById('task-description')
 var prioritySelect = document.getElementById('task-priority')
 var taskContainer= document.getElementById('task-container')
+var modalContainer = document.getElementById('modal-container')
 
 //buttons
 var createBtn = document.getElementById('create-btn')
@@ -9,10 +10,28 @@ var allBtn = document.getElementById('all-btn')
 var activeBtn = document.getElementById('active-btn')
 var completedBtn = document.getElementById('completed-btn')
 var clearBtn = document.getElementById('clear-btn')
+var modalBtn = document.getElementById('modal-btn')
+var closeModalBtn = document.getElementById('close-modal-btn')
 
 
 var tasks = []
 var currentFilter = 'all'
+var modalState = 'closed'
+
+function toggleModal(state){
+    modalState = state
+    if (state === 'closed'){
+        modalContainer.classList.add('closed-modal')
+    }else{
+        modalContainer.classList.remove('closed-modal')
+    }
+}
+modalBtn.addEventListener('click', ()=>{
+    toggleModal('opened')
+})
+closeModalBtn.addEventListener('click', ()=>{
+    toggleModal('closed')
+})
 
 function getTasks(){
     var allTasks = localStorage.getItem('tasks')
@@ -52,6 +71,7 @@ function createTask(event){
     descriptionInput.value = ''
     prioritySelect.value = 'medium'
     applyFilter(currentFilter)
+    toggleModal('closed')
 }
 createBtn.addEventListener('click', createTask)
 

@@ -34,7 +34,7 @@ i{
     justify-content: space-between;
     align-items: center;
 }
-.side-bar{
+.nav-bar{
     width: 30%;
     height: 100vh;
     padding: 30px 20px;
@@ -45,7 +45,7 @@ i{
     scrollbar-width: none;
     border-right: 3px solid var(--light-brown);
 }
-.side-bar h2{
+.nav-bar h2{
     margin-bottom: 20px;
 }
 form{
@@ -100,7 +100,7 @@ li{
     border-radius: 5px;
     transition: 0.5s;
 }
-.side-bar i{
+.nav-bar i{
     margin-right: 5px;
     cursor: pointer;
 }
@@ -216,4 +216,99 @@ li:hover{
 }
 .checked p{
     color: var(--text-muted);
+}
+
+@media screen and (max-width:775px){
+    .container{
+        flex-direction: column-reverse;
+    }
+    #task-container{
+        height: 85vh;
+        padding: 30px;
+        padding-top: 80px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .task{
+        margin-top: 20px;
+    }
+    .nav-bar{
+        width: 100%;
+        height: 12vh;
+        padding: 10px;
+    }
+    .nav-bar h2{
+        position: absolute;
+        z-index: 99;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        background-color: var(--light-gray);
+        border-bottom: 2px solid var(--light-brown);
+        font-size: 26px;
+    }
+    form{
+        width: 90%;
+        padding-top: 50px;
+        position: relative;
+        overflow-y: auto; 
+    }
+    .modal{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 90;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: 0.5s;
+    }
+    .closed-modal{
+        opacity: 0;
+        display: none; 
+    }
+    
+   #close-modal-btn{
+        color: var(--text-muted);
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+    input,textarea, select, #create-btn{
+        padding: 15px;
+    }
+    textarea{
+        height: 60%;
+        margin: 20px 0px;
+    }
+    .clear-btn-cont{
+        display: none;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+    li{
+        width: 22%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    li i{
+        margin-left: 5px;
+        margin-bottom: 15px;
+    }
+    .active-btn{
+        border: none;
+    }
 }

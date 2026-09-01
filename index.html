@@ -18,41 +18,48 @@
   </head>
   <body>
     <div class="container">
-      <div class="side-bar">
+      <div class="nav-bar">
         <div>
           <h2>Sticky Note</h2>
-          <form>
-            <input type="text" id="task-title" placeholder="Task Title" />
-            <textarea
-              name=""
-              id="task-description"
-              placeholder="Description"
-              rows="4"
-            ></textarea>
-            <select name="" id="task-priority">
-              <option value="high">High</option>
-              <option value="medium">Medium</option>
-              <option value="low">Low</option>
-            </select>
-            <button id="create-btn">
-              <i class="fa-solid fa-thumbtack"></i>
-              Create
-            </button>
-          </form>
+          <div id="modal-container" class=" modal">
+            <form>
+              <i class="fa-solid fa-xmark" id="close-modal-btn"></i>
+
+              <input type="text" id="task-title" placeholder="Task Title" />
+              <textarea
+                name=""
+                id="task-description"
+                placeholder="Description"
+                rows="4"
+              ></textarea>
+              <select name="" id="task-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+              <button id="create-btn">
+                <i class="fa-solid fa-thumbtack"></i>
+                Create
+              </button>
+            </form>
+          </div>
 
           <ul>
             <li id="all-btn">
-              <i class="fa-solid fa-list-ul"></i>
+              <i class="fa-solid fa-border-all"></i>
               All
             </li>
             <li id="active-btn">
               <i class="fa-solid fa-thumbtack"></i>
-
               Active
             </li>
             <li id="completed-btn">
               <i class="fa-regular fa-circle-check"></i>
-              Completed
+              Done
+            </li>
+            <li id="modal-btn">
+              <i class="fa-solid fa-plus"></i>
+              New
             </li>
           </ul>
         </div>
