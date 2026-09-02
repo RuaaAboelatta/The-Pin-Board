@@ -60,7 +60,7 @@ function createTask(event){
     var newTask = {
         id: Date.now(),
         title: taskTitle,
-        description: taskDescription || 'No description',
+        description: taskDescription,
         priority: taskPriority,
         completed: false
     }

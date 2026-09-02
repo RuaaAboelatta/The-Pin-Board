@@ -49,6 +49,9 @@ i{
 .nav-bar h2{
     margin-bottom: 20px;
 }
+.nav-bar h2 i{
+    font-size: 20px;
+}
 form{
     width: 100%;
     background-color: var(--light-gray);
@@ -256,6 +259,7 @@ li:hover{
         width: 100%;
         height: 12vh;
         padding: 10px;
+        border: none;
     }
     .nav-bar h2{
         position: absolute;
