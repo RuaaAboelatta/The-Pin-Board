@@ -105,7 +105,6 @@ clearBtn.addEventListener('click', clearCompleted)
 
 // Displaying tasks
 function displayTasks(tasks) {
-    console.log('All tasks:', tasks)
     taskContainer.innerHTML = tasks.map((task)=>{
         return`
             <div class="task task-${task.priority} ${task.completed ? "checked" : ""}">
@@ -131,21 +130,42 @@ function applyFilter(filter){
 
     switch(filter){
         case 'all' :
-            displayTasks(tasks)
+            if (tasks.length === 0) {
+                taskContainer.innerHTML = `<p class="empty-message">
+                                                <i class="fa-solid fa-asterisk"></i>
+                                                Create Your First Task! 
+                                            </p>`
+            } else {
+                displayTasks(tasks)
+            }
             allBtn.classList.add('active-btn')
             break
         case 'active' :
-            activeTasks = tasks.filter((task)=>{
+            var activeTasks = tasks.filter((task)=>{
                 return task.completed === false
             })
-            displayTasks(activeTasks)
+            if (activeTasks.length === 0) {
+                taskContainer.innerHTML = `<p class="empty-message">
+                                                <i class="fa-solid fa-asterisk"></i>
+                                                No Active Tasks 
+                                            </p>`
+            } else {
+                displayTasks(activeTasks)
+            }
             activeBtn.classList.add('active-btn')
             break
         case 'completed' :
-            completedTasks = tasks.filter((task)=>{
+            var completedTasks = tasks.filter((task)=>{
                 return task.completed === true
             })
-            displayTasks(completedTasks)
+            if (completedTasks.length === 0) {
+                taskContainer.innerHTML = `<p class="empty-message">
+                                                <i class="fa-solid fa-asterisk"></i>
+                                                No Completed Tasks, Yet 
+                                            </p>`
+            } else {
+                displayTasks(completedTasks)
+            }
             completedBtn.classList.add('active-btn')
             break
         default:
@@ -156,14 +176,26 @@ function applyFilter(filter){
 
 allBtn.addEventListener('click', ()=>{
     applyFilter('all')
+    var taskCards = document.querySelectorAll('.task')
+    taskCards.forEach(function(task) {
+        task.classList.add('animate')
+    })
 })
 
 activeBtn.addEventListener('click', ()=>{
     applyFilter('active')
+    var taskCards = document.querySelectorAll('.task')
+    taskCards.forEach(function(task) {
+        task.classList.add('animate')
+    })
 })
 
 completedBtn.addEventListener('click', ()=>{
     applyFilter('completed')
+    var taskCards = document.querySelectorAll('.task')
+    taskCards.forEach(function(task) {
+        task.classList.add('animate')
+    })
 })
 
 

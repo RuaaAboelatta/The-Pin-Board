@@ -34,7 +34,6 @@ i{
     justify-content: space-between;
     align-items: center;
     height: 100vh;
-
 }
 .nav-bar{
     width: 30%;
@@ -147,6 +146,13 @@ li:hover{
     overflow: auto;
     scrollbar-width:thin;
 }
+.empty-message {
+    font-family: "Patrick Hand SC", cursive;
+    font-size: 32px;
+}
+.empty-message i{
+    font-size: 20px;
+}
 .task{
     position: relative;
     padding: 20px;
@@ -156,6 +162,9 @@ li:hover{
     transition: 0.5s;
     border-radius: 5px;
     box-shadow: 0 4px 20px var(--light-gray);
+}
+.animate{
+    animation: floatIn 0.7s;
 }
 .task:nth-child(even):hover{
     transform: scale(1.05) rotate(3deg);
@@ -341,6 +350,19 @@ li:hover{
     }
     form{
         height: 35vh;
+    } 
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-5deg) translateY(30px);
     }
-    
+    60% {
+        transform: scale(1.02) rotate(1deg) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg) translateY(0);
+    }
 }
