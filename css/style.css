@@ -163,6 +163,11 @@ li:hover{
     border-radius: 5px;
     box-shadow: 0 4px 20px var(--light-gray);
 }
+.task p{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    
+}
 .animate{
     animation: floatIn 0.7s;
 }
